@@ -1,0 +1,99 @@
+/* Section Styles */
+section {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  align-items: flex-start;
+  justify-content: center;
+  padding: 30px;
+  gap: 200px; /* More space between photo and paragraph */
+  flex-direction: row-reverse; /* Reverse the order to place the image on the right */
+}
+
+.txt-section {
+  flex: 2; /* Allow the text section to take more space */
+  max-width: 800px; /* Increase max-width to ensure the h1 fits */
+  order: 1; /* Text comes first */
+}
+
+.txt-section h1 {
+  color: #222222;
+  font-size: 80px;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.txt-section h2 {
+  color: #333333;
+  font-size: 61px;
+}
+
+.txt-section p {
+  font-size: 21px;
+  color: #333333;
+}
+
+.img-section {
+  flex: 1; /* Give less space to the image section */
+  display: flex;
+  flex-direction: column; /* Stack image and buttons */
+  align-items: center; /* Center buttons under the image */
+  gap: 20px; /* Space between image and buttons */
+  order: 2; /* Image comes second */
+  margin-top: 50px; /* Adjust the vertical positioning to lower the image */
+}
+
+button {
+  padding: 5px 15px;
+  font-size: 21px;
+  background-color: #d7688e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 30px; /* Right under paragraph */
+  margin-left: 300px;
+}
+
+button:hover {
+  background-color: #a81845;
+}
+
+/* Image Section */
+.img-section .image-container {
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Hide from layout */
+  position: absolute; /* Overlap each other */
+  transition: opacity 0.5s ease, visibility 0s 0.5s; /* Smooth fade effect */
+}
+
+.img-section .image-container.active {
+  opacity: 1; /* Show active image */
+  visibility: visible; /* Make visible in layout */
+  position: relative; /* Restore layout */
+  transition: opacity 0.5s ease, visibility 0s 0s; /* Smooth fade effect */
+}
+
+.img-section img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 80px; /* Space between buttons */
+}
+
+.navigation-buttons img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navigation-buttons img:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}

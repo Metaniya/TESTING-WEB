@@ -1,0 +1,120 @@
+/* Center the entire content of the page */
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the entire section horizontally */
+  text-align: left; /* Left-align the text content */
+  margin: 2rem auto; /* Center content within the page */
+  max-width: 1200px; /* Constrain content width for better visuals */
+  gap: 220px; /* Space between image and text */
+}
+
+/* Left Section: Profile Image */
+.contact-section .image-container {
+  flex: 0 0 20%; /* Occupy 35% of the container width */
+  display: flex;
+  justify-content: center;
+}
+
+.contact-section .contact-pic {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Crop the image without stretching */
+  border: 3px solid #e91e63; /* Add a border */
+  box-shadow: 0 0 15px rgba(233, 30, 99, 0.5); /* Add initial glow */
+  animation: gentle-glow 3s ease-in-out infinite; /* Gentle pulsing effect */
+}
+
+/* Right Section: Contact Info */
+.contact-section .contact-info {
+  flex: 1; /* Use the remaining space for the text content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Align content to the center */
+}
+
+/* Title and Text Styles */
+.contact-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center; /* Center-align title */
+}
+
+.contact-section p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #666;
+  text-align: center; /* Center-align paragraph */
+}
+
+/* Social Media Icons */
+.contact-section ul {
+  display: flex;
+  gap: 1rem; /* Add space between icons */
+  list-style: none;
+  padding: 0;
+}
+
+.contact-section ul li a img {
+  width: 50px;
+  height: 50pxpx;
+  border-radius: 50%; /* Make icons circular */
+  transition: transform 0.3s ease;
+  animation: pulse 3s infinite; /* Smooth pulsing effect */
+}
+
+.contact-section ul li a img:hover {
+  transform: scale(1.1); /* Add hover effect */
+}
+
+/* Email Button */
+.email-link {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem; /* Reduce button padding */
+  width: 150px; /* Smaller button width */
+  text-align: center;
+  background-color: #d7688e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.email-link:hover {
+  background-color: #a81845;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center; /* Center-align content */
+    text-align: center;
+  }
+
+  .contact-section .image-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-section .contact-info {
+    flex: 1 1 100%; /* Full width for the text content */
+    text-align: center; /* Center-align all content */
+  }
+}
+/* Define the Keyframes for Gentle Pulsing Glow */
+@keyframes gentle-glow {
+  0% {
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.5); /* Initial glow */
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(233, 30, 99, 0.7); /* Intensified glow */
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.5); /* Back to initial glow */
+  }
+}
